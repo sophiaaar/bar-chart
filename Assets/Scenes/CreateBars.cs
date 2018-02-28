@@ -4,40 +4,35 @@ using UnityEngine;
 
 public class CreateBars : MonoBehaviour {
 
-	public string[] milestones;
-	public Object dataFile;
-	public GameObject barSprite;
+	//public string[] milestones;
+	//public Object dataFile;
+	//public GameObject slider;
+	public GameObject bar;
 	public Transform chartArea;
 
 	private float widthOfBars;
 	private List<float> barPositions;
+	public ParseData _parseData;
 
 	// Use this for initialization
 	void Start ()
-	{		
-		if (milestones.Length != 0)
+	{
+		List<ParseData.Result> listOfResults = new List<ParseData.Result>();
+		listOfResults = _parseData.OrganiseData();
+
+
+		if (listOfResults.Count != 0)
 		{
-			RectTransform rt = chartArea.GetComponent<RectTransform>();
-			//Debug.Log("height " + rt.rect.height);
-			widthOfBars = rt.rect.height / milestones.Length;
-			//barSprite.transform.localScale = ChangeBarHeight();
+			//RectTransform rt = chartArea.GetComponent<RectTransform>();
+			//widthOfBars = rt.rect.height / listOfResults.Count;
 
-			RectTransform rt2 = barSprite.GetComponent<RectTransform>();
-			rt2.sizeDelta = new Vector2(1f, widthOfBars);
-			//Debug.Log("bar width " + widthOfBars);
-			//barPositions = new List<float>();
-			for (int i = 0; i < milestones.Length; i++)
+			for (int i = 0; i < listOfResults.Count; i++)
 			{
-				float barPos = (widthOfBars * i) - (rt.rect.height / 2.5f); // diving the height by 2 puts the bottom bar right on the edge
-				//Debug.Log("barpos " + barPos);
-				
-
-				GameObject barClone = Instantiate(barSprite, new Vector3(barSprite.transform.position.x, barPos, 1), Quaternion.identity);
-				//barClone.transform.parent = chartArea.parent;
-				//float barHeight = barClone.GetComponent<RectTransform>().localScale.y;
-				//barHeight = widthOfBars;
+				GameObject barClone = Instantiate(bar, chartArea.transform, false);
+				Bar currentBar = barClone.GetComponent<Bar>();
+				currentBar.CreateBar(listOfResults[i]);
 			}
-			barSprite.SetActive(false);
+			bar.SetActive(false);
 		}
 		
 	}
@@ -45,18 +40,5 @@ public class CreateBars : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-	}
-
-	Vector3 ChangeBarHeight()
-	{
-		float spriteHeight = barSprite.transform.localScale.y;
-		spriteHeight = widthOfBars;
-		//Debug.Log(barSprite.transform.localScale.y);
-
-		Vector3 scale = new Vector3(10f, spriteHeight, 1f);
-
-		// RectTransform rt = barSprite.GetComponent<RectTransform>();
-		// rt.sizeDelta = new Vector2(10f, spriteHeight);
-		return scale;
 	}
 }
