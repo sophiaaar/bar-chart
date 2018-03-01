@@ -32,7 +32,7 @@ public class CreateBars : MonoBehaviour {
 				Bar currentBar = barClone.GetComponent<Bar>();
 				currentBar.CreateBar(listOfResults[i]);
 			}
-			bar.SetActive(false);
+			//bar.SetActive(false);
 		}
 		
 	}
