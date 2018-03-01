@@ -372,7 +372,7 @@ Prefab:
     - target: {fileID: 224421278496339858, guid: 3f082d8e577b545f8b5a84e906856795,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0.7502
       objectReference: {fileID: 0}
     - target: {fileID: 224421278496339858, guid: 3f082d8e577b545f8b5a84e906856795,
         type: 2}
@@ -401,6 +401,36 @@ Prefab:
     - target: {fileID: 114906938228922988, guid: 3f082d8e577b545f8b5a84e906856795,
         type: 2}
       propertyPath: m_Value
+      value: 7502
+      objectReference: {fileID: 0}
+    - target: {fileID: 114906938228922988, guid: 3f082d8e577b545f8b5a84e906856795,
+        type: 2}
+      propertyPath: m_Colors.m_NormalColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114906938228922988, guid: 3f082d8e577b545f8b5a84e906856795,
+        type: 2}
+      propertyPath: m_Colors.m_NormalColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114906938228922988, guid: 3f082d8e577b545f8b5a84e906856795,
+        type: 2}
+      propertyPath: m_Colors.m_NormalColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114217647423051642, guid: 3f082d8e577b545f8b5a84e906856795,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114217647423051642, guid: 3f082d8e577b545f8b5a84e906856795,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114217647423051642, guid: 3f082d8e577b545f8b5a84e906856795,
+        type: 2}
+      propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -772,12 +802,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 0
-    m_Right: 0
-    m_Top: 0
-    m_Bottom: 0
+    m_Left: 10
+    m_Right: 10
+    m_Top: 10
+    m_Bottom: 10
   m_ChildAlignment: 0
-  m_Spacing: 0
+  m_Spacing: 10
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
