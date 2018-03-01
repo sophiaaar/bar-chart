@@ -13,6 +13,7 @@ public class CreateBars : MonoBehaviour {
 	private float widthOfBars;
 	private List<float> barPositions;
 	public ParseData _parseData;
+	public VerticalAxis verticalAxis;
 
 	// Use this for initialization
 	void Start ()
@@ -31,6 +32,7 @@ public class CreateBars : MonoBehaviour {
 				GameObject barClone = Instantiate(bar, chartArea.transform, false);
 				Bar currentBar = barClone.GetComponent<Bar>();
 				currentBar.CreateBar(listOfResults[i]);
+				verticalAxis.CreateAxis(listOfResults[i]);
 			}
 			//bar.SetActive(false);
 		}
